@@ -1,12 +1,51 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Home from "./Screens/Home";
+import Learn from "./Screens/Learn";
+import Practice from "./Screens/Practice";
+import Vocabulary from "./Screens/Vocabulary";
+import BottomNavigationBar from "./Components/BottomNavigationBar";
+import * as serviceWorker from "./serviceWorker";
+import "./index.css";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const App = () => {
+  return (
+    <div
+      style={{
+        minWidth: "100vw",
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "",
+        justifyContent: "space-between"
+      }}
+    >
+      <Router>
+        <Route path="/learn">
+          <Learn />
+        </Route>
+        <Route path="/practice">
+          <Practice />
+        </Route>
+        <Route path="/vocabulary">
+          <Vocabulary />
+        </Route>
+        <Route path="/home">
+          <Home />
+        </Route>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/">
+          <BottomNavigationBar />
+        </Route>
+      </Router>
+    </div>
+  );
+};
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+export default App;
+
+ReactDOM.render(<App />, document.getElementById("root"));
+serviceWorker.register();
