@@ -61,6 +61,7 @@ const Practice = () => {
     }
     setWord(newWord);
   };
+  
 
   useEffect(async () => {
     let newWord;
