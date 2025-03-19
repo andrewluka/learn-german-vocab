@@ -18,6 +18,7 @@
     "react-window": "1.8.5",
     "react-virtualized-auto-sizer": "1.0.2"
   },
+  "homepage": "http://clamity.org",
   "scripts": {
     "dev": "react-scripts start",
     "build": "react-scripts build",
