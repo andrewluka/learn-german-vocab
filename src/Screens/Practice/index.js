@@ -61,7 +61,7 @@ const Practice = () => {
     }
     setWord(newWord);
   };
-  
+
 
   useEffect(async () => {
     let newWord;
@@ -71,7 +71,7 @@ const Practice = () => {
       newWord = await getRandomWord();
     }
     setWord(newWord);
-  }, []);
+  }, [onlyLearnt]);
 
   return (
     <AutoSizer>
