@@ -67,7 +67,7 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     environment:
       name: github-pages
-      url: "*"
+      url:  ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
