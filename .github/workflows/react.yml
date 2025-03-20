@@ -77,9 +77,13 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: npm ci
-      - run: npm run build --if-present
 
+      - name: build
+        run: |
+          npm ci
+          npm run build
+
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
