@@ -63,14 +63,17 @@ const Practice = () => {
   };
 
 
-  useEffect(async () => {
-    let newWord;
-    if (onlyLearnt) {
-      newWord = await getLearntWord();
-    } else {
-      newWord = await getRandomWord();
+  useEffect(() => {
+    async function wrapper() {
+      let newWord;
+      if (onlyLearnt) {
+        newWord = await getLearntWord();
+      } else {
+        newWord = await getRandomWord();
+      }
+      setWord(newWord);  
     }
-    setWord(newWord);
+    wrapper();
   }, [onlyLearnt]);
 
   return (
