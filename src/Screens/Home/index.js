@@ -33,7 +33,7 @@ const randomFlashcardConfig = type => {
 }
 
 const Card = props => {
-  let [isIn, setIsIn] = useState(true);
+  let [isIn] = useState(true);
 
   return (
     <div>

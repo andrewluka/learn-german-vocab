@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { VariableSizeList as List } from "react-window";
-import { get } from "idb-keyval";
 import {
-  Card,
-  CardContent,
-  CardActions,
-  Typography,
   IconButton,
   ListItem,
   ListItemText
@@ -13,7 +8,7 @@ import {
 import AutoSizer from "react-virtualized-auto-sizer";
 import VolumeUpOutlinedIcon from "@material-ui/icons/VolumeUpOutlined";
 import { getSpeaker, getLearntGermanWords, getMeaning } from "../../utils";
-import words from "../../german-english.json";
+// import words from "../../german-english.json";
 
 const Vocabulary = () => {
   let [learntWords, setLearntWords] = useState([]);

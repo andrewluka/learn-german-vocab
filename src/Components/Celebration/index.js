@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import Confetti from "react-dom-confetti";
-import { Card, CardContent, CardActions, Typography, Button } from "@material-ui/core";
 
 const Celebration = ({active}) => {
   const confettiConfig = {
