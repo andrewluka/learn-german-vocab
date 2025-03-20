@@ -8,7 +8,6 @@ import {
 import MenuBookOutlinedIcon from "@material-ui/icons/MenuBookOutlined";
 import HomeOutlinedIcon from "@material-ui/icons/HomeOutlined";
 import CreateOutlinedIcon from "@material-ui/icons/CreateOutlined";
-import SettingsOutlinedIcon from "@material-ui/icons/SettingsOutlined";
 import BookOutlinedIcon from "@material-ui/icons/BookOutlined";
 
 const StyledBottomNavigationAction = withStyles({
