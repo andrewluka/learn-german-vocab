@@ -24,6 +24,7 @@ const StyledBottomNavigation = withStyles({
   }
 })(BottomNavigation);
 
+
 const BottomNavigationBar = () => {
   let history = useHistory();
   let [value, setValue] = useState(
