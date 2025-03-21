@@ -37,16 +37,21 @@ const Vocabulary = () => {
 
   return (
     <AutoSizer>
-      {({ width, height }) => (
-        <List
-          itemCount={learntWords.length}
-          width={width}
-          height={height}
-          itemSize={itemSize}
-        >
-          {renderRow}
-        </List>
-      )}
+      {
+        learntWords.length > 0 ? 
+        ({ width, height }) => (
+          <List
+            itemCount={learntWords.length}
+            width={width}
+            height={height}
+            itemSize={itemSize}
+          >
+            {renderRow}
+          </List>
+        )
+          : "No learnt words yet"
+      }
+      
     </AutoSizer>
   );
 };
