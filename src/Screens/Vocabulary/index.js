@@ -35,10 +35,9 @@ const Vocabulary = () => {
     );
   }
 
-  return (
+  return learntWords.length > 0 ? (
     <AutoSizer>
       {
-        learntWords.length > 0 ? 
         ({ width, height }) => (
           <List
             itemCount={learntWords.length}
@@ -49,11 +48,10 @@ const Vocabulary = () => {
             {renderRow}
           </List>
         )
-          : "No learnt words yet"
-      }
-      
+      }      
     </AutoSizer>
-  );
+  ) : 
+  "No words learnt until now";
 };
 
 export default Vocabulary;
