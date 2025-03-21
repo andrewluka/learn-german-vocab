@@ -93,5 +93,5 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
         id: deployment
+        uses: actions/deploy-pages@v4
