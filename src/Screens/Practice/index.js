@@ -45,7 +45,7 @@ const getLearntEnglishWord = getGetter(async () => {
   for (let word of germanWords) {
     englishWords.push(words[word]);
   }
-  console.log(englishWords);
+  // console.log(englishWords);
   return englishWords;
 });
 const getRandomGermanWord = getGetter(() => Object.keys(words));
