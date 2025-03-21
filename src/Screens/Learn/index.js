@@ -4,7 +4,7 @@ import Flashcard from "../../Components/Flashcard";
 import words from "../../german-english.json";
 // import { set } from "idb-keyval";
 import AutoSizer from "react-virtualized-auto-sizer";
-import { getLearntGermanWords } from "../../utils";
+// import { getLearntGermanWords } from "../../utils";
 
 const randomGermanWord = (excludedWords = []) => {
   const germanWords = Object.keys(words);
