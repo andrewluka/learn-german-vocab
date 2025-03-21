@@ -3,7 +3,8 @@ import { VariableSizeList as List } from "react-window";
 import {
   IconButton,
   ListItem,
-  ListItemText
+  ListItemText,
+  Typography
 } from "@material-ui/core";
 import AutoSizer from "react-virtualized-auto-sizer";
 import VolumeUpOutlinedIcon from "@material-ui/icons/VolumeUpOutlined";
@@ -51,7 +52,11 @@ const Vocabulary = () => {
       }      
     </AutoSizer>
   ) : 
-  "No words learnt until now";
+  (
+    <Typography variant="subtitle2" style={{
+      margin: "auto"
+    }}>No words learnt until now</Typography>
+  )
 };
 
 export default Vocabulary;
