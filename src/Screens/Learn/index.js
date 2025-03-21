@@ -49,7 +49,7 @@ const Learn = () => {
   };
 
   const setNewWord = async () => {
-    const learntGermanWords = await getLearntGermanWords();
+    // const learntGermanWords = await getLearntGermanWords();
     setWord(randomGermanWord(
       // commented out cuz that would mean we exclude all words
       // learntGermanWords
