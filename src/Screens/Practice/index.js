@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import Flashcard from "../../Components/Flashcard";
 import words from "../../german-english.json";
-import { get } from "idb-keyval";
+// import { get } from "idb-keyval";
 import AutoSizer from "react-virtualized-auto-sizer";
-import FilterListOutlinedIcon from "@material-ui/icons/FilterListOutlined";
-import LanguageOutlinedIcon from "@material-ui/icons/LanguageOutlined";
-import { Fab, Tooltip } from "@material-ui/core";
+// import FilterListOutlinedIcon from "@material-ui/icons/FilterListOutlined";
+// import LanguageOutlinedIcon from "@material-ui/icons/LanguageOutlined";
+// import { Fab, Tooltip } from "@material-ui/core";
+
+import zwords from "../../german-english.json"
 
 const getGetter = source => {
   let prev = "";
@@ -28,10 +30,16 @@ const getGetter = source => {
 };
 
 const getLearntGermanWord = getGetter(
-  async () => (await get("learnt-german-words")) || []
+  async () => ( 
+    // await get("learnt-german-words")
+    Object.keys(zwords)
+  ) || []
 );
 const getLearntEnglishWord = getGetter(async () => {
-  let germanWords = (await get("learnt-german-words")) || [];
+  let germanWords = (
+    // await get("learnt-german-words")
+    Object.keys(zwords)
+  ) || [];
   let englishWords = [];
 
   for (let word of germanWords) {
@@ -50,7 +58,9 @@ const getRandomWord = () =>
 
 const Practice = () => {
   let [word, setWord] = useState("");
-  let [onlyLearnt, setOnlyLearnt] = useState(true);
+  let [onlyLearnt, 
+    // setOnlyLearnt
+  ] = useState(true);
 
   const nextWord = async () => {
     let newWord;
@@ -99,7 +109,8 @@ const Practice = () => {
             }}
             onSkip={nextWord}
           />
-          <Tooltip title={onlyLearnt ? "All words" : "Only from vocabulary"}>
+          {/* next section not needed cuz no cookies -> no learnt words */}
+          {/* <Tooltip title={onlyLearnt ? "All words" : "Only from vocabulary"}>
             <Fab
               onClick={() => {
                 setOnlyLearnt(!onlyLearnt);
@@ -117,7 +128,7 @@ const Practice = () => {
                 <FilterListOutlinedIcon />
               )}
             </Fab>
-          </Tooltip>
+          </Tooltip> */}
         </div>
       )}
     </AutoSizer>

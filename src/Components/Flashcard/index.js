@@ -167,12 +167,13 @@ const Flashcard = ({
             >
               Got it
             </Button>
-            <Button
+            {/* has no meaning if we dont keep track of learnt words */}
+            {/* <Button
               onClick={() => onDismissed({ meaning, word, type })}
               color="primary"
             >
               Learn later
-            </Button>
+            </Button> */}
           </React.Fragment>
         )}
       </CardActions>

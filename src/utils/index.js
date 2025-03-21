@@ -1,8 +1,11 @@
-import { get } from "idb-keyval";
+// import { get } from "idb-keyval";
 import words from "../german-english.json";
 
 export const getLearntGermanWords = async () =>
-  (await get("learnt-german-words")) || [];
+  (
+    // await get("learnt-german-words")
+    Object.keys(words)
+  ) || [];
 
 export const getEnglishToGermanMapping = (germanToEnglishMapping = words) => {
   let keys = Object.keys(germanToEnglishMapping);

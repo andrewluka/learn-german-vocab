@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Slide } from "@material-ui/core";
 import Flashcard from "../../Components/Flashcard";
 import words from "../../german-english.json";
-import { set } from "idb-keyval";
+// import { set } from "idb-keyval";
 import AutoSizer from "react-virtualized-auto-sizer";
 import { getLearntGermanWords } from "../../utils";
 
@@ -23,7 +23,10 @@ const Learn = () => {
   let [word, setWord] = useState("");
   let [isIn, setIsIn] = useState(false);
   useEffect(() => {
-    (async () => setWord(randomGermanWord(await getLearntGermanWords())))();
+    (async () => setWord(randomGermanWord(
+      // commented out cuz that would mean we exclude all words
+      // await getLearntGermanWords()
+    )))();
   }, []);
 
   useEffect(() => {
@@ -47,7 +50,10 @@ const Learn = () => {
 
   const setNewWord = async () => {
     const learntGermanWords = await getLearntGermanWords();
-    setWord(randomGermanWord(learntGermanWords));
+    setWord(randomGermanWord(
+      // commented out cuz that would mean we exclude all words
+      // learntGermanWords
+    ));
   };
 
   return (
@@ -65,12 +71,13 @@ const Learn = () => {
                 word={word}
                 type="learn"
                 onLearnt={async ({ word }) => {
-                  // add word to learnt words
-                  const learntGermanWords = await getLearntGermanWords();
-                  if (!learntGermanWords.find(e => e === word)) {
-                    learntGermanWords.push(word);
-                  }
-                  await set("learnt-german-words", learntGermanWords);
+                  // // add word to learnt words
+                  // const learntGermanWords = await getLearntGermanWords();
+                  // if (!learntGermanWords.find(e => e === word)) {
+                  //   learntGermanWords.push(word);
+                  // }
+                  // await set("learnt-german-words", learntGermanWords);
+
                   // slide animation
                   transition();
                   await setNewWord();
