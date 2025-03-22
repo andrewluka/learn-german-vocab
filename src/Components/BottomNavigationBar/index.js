@@ -20,7 +20,14 @@ const StyledBottomNavigationAction = withStyles({
 const StyledBottomNavigation = withStyles({
   root: {
     boxShadow: "0 0 3px black",
-    zIndex: 1
+    zIndex: 1,
+
+    position: "fixed",
+    bottom: "0px",
+    left: "0px",
+    right: "0px",
+    marginBottom: "0px",
+    width: "100vw",
   }
 })(BottomNavigation);
 
