@@ -83,7 +83,6 @@ jobs:
           npm ci
           npm run build
           sed -i 's/\"\/static/\"\.\/static/g' ./build/index.html
-          cat ./build/index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
